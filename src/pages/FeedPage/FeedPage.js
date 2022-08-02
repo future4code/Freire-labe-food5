@@ -1,15 +1,37 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import SearchIcon from '../../assets/img/search_icon.svg'
 import CardRestaurant from '../../components/CardRestaurantFeed/CardRestaurant'
-import { GetRestaurants } from '../../services/restaurants'
+import { GetRestaurants, restaurantsCategories } from '../../services/restaurants'
 import { GlobalStyle, MainContainer, SearchContainer, InputStyled, CategoriasContainer, CategoriaLi } from './styled'
 
 const FeedPage = () => {
+    const [listaRestaurantes, setListaRestaurantes] = useState()
     // Criar um hook para proteger a página
-    // useEffect(() => {
-    //     GetRestaurants()
-    // }, [])
+    useEffect(() => {
+        GetRestaurants(setListaRestaurantes)
+    }, [])
+
+
+    let listaRestaurantesRender
+    if(listaRestaurantes) {
+        console.log(listaRestaurantes)
+        listaRestaurantesRender = listaRestaurantes.map(restaurante => {
+            return (
+                <CardRestaurant
+                    key={restaurante.id}
+                    logoUrl={restaurante.logoUrl}
+                    name={restaurante.name}
+                    deliveryTime={restaurante.deliveryTime}
+                    shipping={restaurante.shipping}
+                />
+            )
+        })
+    }
+
+    let listaDeCategorias = restaurantsCategories.map((categoria, index) => {
+        return <CategoriaLi key={index}>{categoria}</CategoriaLi>
+    })
 
     return (
         <MainContainer>
@@ -19,20 +41,10 @@ const FeedPage = () => {
                 <InputStyled placeholder='Restaurante' />
             </SearchContainer>
             <CategoriasContainer>
-                {/* falta criar uma lista com todas as categorias e aprender a fazer um slider */}
-                <CategoriaLi>Burger</CategoriaLi>
-                <CategoriaLi>Asiática</CategoriaLi>
-                <CategoriaLi>Massas</CategoriaLi>
-                <CategoriaLi>Saudáveis</CategoriaLi>
+                {listaDeCategorias}
             </CategoriasContainer>
             <div>
-                {/* card teste */}
-                <CardRestaurant 
-                    logoUrl={'https://pesweb.azureedge.net/spimg/restaurantphotos/5-star-hotel-porto-restaurant-details-new.jpg?scale=downscaleonly&encoder=freeimage&progressive=true&quality=70&w=775&h=530&mode=crop'}
-                    name={'Restaurante teste'}
-                    deliveryTime={10}
-                    shipping={20}
-                />
+                {listaRestaurantesRender}
             </div>
         </MainContainer>
     )
