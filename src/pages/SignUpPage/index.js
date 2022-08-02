@@ -1,5 +1,5 @@
 import React from 'react';
-import { SignUpPageContainer } from './styles.css';
+import { SignUpPageContainer } from './styles.js';
 
 const SignUpPage = () => {
   return (
