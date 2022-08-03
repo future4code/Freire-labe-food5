@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { secundaryColor } from "../../constants/colors";
 
 // index
 export const ScreenContainer = styled.div`
@@ -8,27 +9,14 @@ export const ScreenContainer = styled.div`
     align-items: center;
     width: 100%;
     height: 100vh;
+    
 `
-export const PreLoginPageContainer = styled.div`
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: ${({left}) => left || 0};
-    right: ${({right}) => right || 0};
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #0e0e0e;
-    color: #FFFFFF;
-    transition: all 0.6s ease;
 
-`
 export const LoginButtonContainer = styled.div`
      width: 100%;
      max-width: 450px;
-`
-
-// form
+     
+`     
 export const InputsContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -51,5 +39,6 @@ export const StyledInput = styled.input `
 
 // common
 export const StyledButton = styled.button `
+    background-color: ${secundaryColor};
 
 `
