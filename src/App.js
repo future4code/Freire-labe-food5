@@ -1,8 +1,10 @@
-import {ProfilePage} from './pages/ProfilePage/ProfilePage' 
+import Router from "./router/routes";
+
 function App() {
   return (
-      <ProfilePage/>
-  
+    <div>
+      <Router/>
+    </div>
   );
 }
 
