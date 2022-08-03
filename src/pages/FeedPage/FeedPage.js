@@ -10,7 +10,7 @@ import { GlobalStyle, MainContainer, SearchContainer, InputStyled, CategoriasCon
 
 const FeedPage = () => {
     const navigate = useNavigate()
-    const [listaRestaurantes, setListaRestaurantes] = useState()
+    const [listaRestaurantes, setListaRestaurantes] = useState([])
     const [categoria, setCategoria] = useState('')
 
     useEffect(() => {

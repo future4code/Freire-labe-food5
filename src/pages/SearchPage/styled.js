@@ -54,3 +54,12 @@ export const InputStyled = styled.input`
         outline: none;
     }
 `
+
+export const ListaResposta = styled.p` 
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
+    min-height: 2.625rem;
+    width: 100%;
+`
