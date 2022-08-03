@@ -13,6 +13,16 @@ export const GlobalStyle = createGlobalStyle`
     }
 `
 
+export const Header = styled.header` 
+    align-items: center ;
+    box-shadow: 0 0.5px 0 0 rgba(0, 0, 0, 0.25);
+    display: flex;
+    height: 2.75rem;
+    justify-content: center;
+    width: 100%;
+    font-size: 1rem;
+`
+
 export const MainContainer = styled.main` 
     padding: 0.5rem 1rem;
     width: 100%;
@@ -40,13 +50,14 @@ export const InputStyled = styled.input`
 export const CategoriasContainer = styled.ul`
     align-items: center;
     display: flex;
-    justify-content: space-evenly;
     margin-top: 0.5rem;
     min-height: 2.625rem;
+    width: 100%;
 `
 
 export const CategoriaLi = styled.li`
-    min-width: 5.438rem;
+    /* min-width: 5.438rem; */
+    margin: 0 0.25rem;
     padding: 0 1rem;
     font-size: 1rem;
     text-align: center;

@@ -14,4 +14,4 @@ export const GetRestaurants = (setRestaurants) => {
     })
 }
 
-export const restaurantsCategories = ["Árabe", "Asiática", "Hamburguer", "Italiana", "Sorvetes", "Carnes", "Baiana", "Petiscos", "Mexicana"]
+export const restaurantsCategories = ["Todas", "Árabe", "Asiática", "Hamburguer", "Italiana", "Sorvetes", "Carnes", "Baiana", "Petiscos", "Mexicana"]
