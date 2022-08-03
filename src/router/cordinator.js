@@ -9,6 +9,13 @@ export const goToSignUp = (navigate) => {
     navigate("/cadastro")
 }
 
+export const goToSearch = (navigate) => {
+    navigate("../feed/search")
+}
+
+export const goBackPage = (navigate) => {
+    navigate(-1)
+}
 export const goToAddAdress = (navigate) => {
     navigate("/endereço")
 }
