@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import ScrollContainer from "react-indiana-drag-scroll"
 
 import SearchIcon from '../../assets/img/search_icon.svg'
 import CardRestaurant from '../../components/CardRestaurantFeed/CardRestaurant'
+import { goToSearch } from '../../router/cordinator'
 import { GetRestaurants, restaurantsCategories } from '../../services/restaurants'
 import { GlobalStyle, MainContainer, SearchContainer, InputStyled, CategoriasContainer, CategoriaLi, Header } from './styled'
 
 const FeedPage = () => {
+    const navigate = useNavigate()
     const [listaRestaurantes, setListaRestaurantes] = useState()
     const [categoria, setCategoria] = useState('')
-    // Criar um hook para proteger a página
+
     useEffect(() => {
         GetRestaurants(setListaRestaurantes)
     }, [])
@@ -61,7 +64,7 @@ const FeedPage = () => {
             <GlobalStyle />
             <Header>FutureEats</Header>
             <MainContainer>
-                <SearchContainer>
+                <SearchContainer onClick={() => goToSearch(navigate)}>
                     <img src={SearchIcon} alt='ícone de pesquisa'/>
                     <InputStyled placeholder='Restaurante' />
                 </SearchContainer>
