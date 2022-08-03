@@ -1,8 +1,8 @@
+import {ProfilePage} from './pages/ProfilePage/ProfilePage' 
 function App() {
   return (
-    <div>
-      teste
-    </div>
+      <ProfilePage/>
+  
   );
 }
 
