@@ -2,11 +2,15 @@ import { useEffect } from "react"
 
 
 export const goToLogin = (navigate) => {
-    navigate("/")
+    navigate("/login")
 }
 
 export const goToSignUp = (navigate) => {
     navigate("/cadastro")
+}
+
+export const goToAddAdress = (navigate) => {
+    navigate("/endereço")
 }
 
 export const useProtectedPage = (navigate) => {

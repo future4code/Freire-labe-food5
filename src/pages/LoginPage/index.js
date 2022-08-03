@@ -1,27 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import LoginForm from './form';
-import { PreLoginPageContainer, ScreenContainer } from './styles.js';
-
+import { ScreenContainer, StyledButton } from './styles.js';
+import { goToSignUp } from '../../router/cordinator'
+import { useNavigate } from 'react-router-dom'
 
 const LoginPage = () => {
-  const [left, setLeft] = useState(0)
-  const [right, setRight] = useState(0)
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLeft("-100rem")
-      setRight("300rem")
-    }, 3000)
-  }, [left, right])
+  const navigate = useNavigate()
 
   return (
     <ScreenContainer>
-      <PreLoginPageContainer left={left} right={right}>
-        Teste
-      </PreLoginPageContainer>
-      <LoginForm>
-        LoginPage
-      </LoginForm>
+      LoginPage
+      <LoginForm />
+      <StyledButton onClick={() => goToSignUp(navigate)}>
+        Se cadastre!
+      </StyledButton>
     </ScreenContainer>
 
 
