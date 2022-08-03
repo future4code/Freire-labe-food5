@@ -24,3 +24,7 @@ export const signUp = (body, clear, navigate) => {
         })
         .catch((err) => alert("Erro no Login"))
 }
+
+export const addAddress = (body, clear, navigate) => {
+    
+}

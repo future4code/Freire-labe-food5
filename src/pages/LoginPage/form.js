@@ -26,12 +26,14 @@ const LoginForm = () => {
                     placeholder='e-mail'
                     value={form.email}
                     onChange={onChange}
+                    name="email"
                 />
                 <StyledInput 
                     type="password" 
                     placeholder='senha'
                     value={form.password}
                     onChange={onChange}
+                    name="password"
                 />
 
                 <StyledButton type='submit'>

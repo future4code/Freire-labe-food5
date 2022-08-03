@@ -1,3 +1,5 @@
-export const primaryColor = "#f27649"
-export const secundaryColor = "#EDEDED"
-export const neutralColor = "#474749"
+export const primaryColor = "#000000"
+export const secundaryColor = "#5CB646"
+export const neutralColor = "#B8B8B8"
+export const backgroundColor = "#000000 25%"
+export const effectColor = "#5CB646 50%"

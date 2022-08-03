@@ -1,10 +1,7 @@
 import styled from "styled-components";
-import {secundaryColor} from '../../constants/colors'
+import { secundaryColor } from "../../constants/colors";
 
-export const SignUpPageContainer = styled.div `
-
-`
-
+// index
 export const ScreenContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -13,19 +10,8 @@ export const ScreenContainer = styled.div`
     width: 100%;
     height: 100vh;
     
-
-    hr {
-    margin: 15px 0 0;
-}
 `
-
-
-export const SignUpButtonContainer = styled.div`
-     width: 100%;
-     max-width: 450px;
-    
-`
-
+  
 export const InputsContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -34,8 +20,7 @@ export const InputsContainer = styled.div`
     align-items: center;
     margin: 3rem 0 20px;
 `
-
-export const SignUpFormContainer = styled.form`
+export const addAdressFormContainer = styled.form`
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -49,7 +34,6 @@ export const StyledInput = styled.input `
 
 // common
 export const StyledButton = styled.button `
-    border-radius: 20px !important;
     background-color: ${secundaryColor};
 
 `
