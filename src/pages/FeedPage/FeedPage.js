@@ -55,6 +55,7 @@ const FeedPage = () => {
                 name={restaurante.name}
                 deliveryTime={restaurante.deliveryTime}
                 shipping={restaurante.shipping}
+                // onClick={() => linkParaPáginaDeDetalhes(navigate, restaurante.id)}
             />
         )
     })

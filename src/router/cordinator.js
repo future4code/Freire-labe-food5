@@ -16,6 +16,7 @@ export const goToSearch = (navigate) => {
 export const goBackPage = (navigate) => {
     navigate(-1)
 }
+
 export const goToAddAdress = (navigate) => {
     navigate("/endereço")
 }
