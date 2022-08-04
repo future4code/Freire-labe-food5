@@ -10,6 +10,7 @@ import SearchPage from '../pages/SearchPage/SearchPage';
 import PreLoginPage from '../pages/PreLoginPage';
 import AddressPage from '../pages/AddressPage';
 import SignupPage from '../pages/SignupPage';
+import ErrorPage from '../pages/ErrorPage';
 
 const Router = () => {
     return (
@@ -21,6 +22,7 @@ const Router = () => {
                 <Route path='/endereco' element={<AddressPage />} />
                 <Route path="/feed" exact element={<FeedPage />} />
                 <Route path="/feed/search" exact element={<SearchPage />} />
+                <Route path="*" element={<ErrorPage />} />
             </Routes>
         </BrowserRouter>
     )
