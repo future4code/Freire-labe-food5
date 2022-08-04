@@ -24,6 +24,10 @@ export const goBackPage = (navigate) => {
     navigate(-1)
 }
 
+export const goToRestaurantMenu = (navigate, id) => {
+    navigate(`../feed/restaurant/${id}`)
+}
+
 export const useProtectedPage = (navigate) => {
 
     useEffect(() => {
