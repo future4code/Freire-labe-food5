@@ -1,6 +1,6 @@
 import React, { useState }from 'react'
 import {useNavigate} from 'react-router-dom'
-import { goToProfilePage,  } from '../../router/cordinator'
+import { goToProfilePage,  } from '../../router/coordinator'
 import avatar from '../../assets/img/avatar.svg'
 import avatarActive from '../../assets/img/avatarActive.svg'
 import shoppingCart from '../../assets/img/shopping-cart.svg'

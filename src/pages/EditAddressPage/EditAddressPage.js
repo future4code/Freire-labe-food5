@@ -4,7 +4,7 @@ import { updateProfile } from "../../services/requisicoes";
 import {Container, Button, Input, Header, ButtonSave, Form, GlobalStyle } from './styled'
 import { BASE_URL } from "../../constants/urls";
 import {useNavigate} from 'react-router-dom'
-import { goToProfilePage } from "../../router/cordinator";
+import { goToProfilePage } from "../../router/coordinator";
 import backPageIcon from '../../assets/img/back-page_icon.svg'
 
 const EditAddressPage = (props) => {
