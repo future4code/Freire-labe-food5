@@ -1,77 +1,129 @@
-import React from 'react'
+import React from 'react';
+
+// global style
+import { FormContainer, StyledInput } from '../../global/globalStyles';
+
+// style
+import { StyledButton } from './styles';
+
+// hooks
+import { useForm } from '../../hooks/useForm';
+
+// router
 import { useNavigate } from 'react-router-dom';
-import useForm from '../../hooks/useForm';
-import { addAddress } from '../../services/users';
-import { InputsContainer, StyledInput, StyledButton } from './styled';
 
-const AdressForm = () => {
-    const [form, onChange, clear] = useForm({
-        street: "",
-        number: "",
-        neighbourhood: "",
-        city: "",
-        state: "",
-        complement: "" 
-    })
-    const navigate = useNavigate()
+// request
+import { saveAddress } from '../../services/user';
 
-    const handleOnSubmit = (event) => {
-        event.preventDefault()
+const AddressForm = () => {
+  const [form, onChange, clear] = useForm({
+    street: '',
+    number: '',
+    neighbourhood: '',
+    city: '',
+    state: '',
+    complement: ''
+  })
 
-        addAddress(form, clear, navigate)
-    }
-    return (
-        <InputsContainer>
-            <addAdressFormContainer onSubmit={handleOnSubmit}>
-                <StyledInput
-                    type="text"
-                    placeholder='rua'
-                    value={form.street}
-                    onChange={onChange}
-                    name="street"
-                />
-                <StyledInput
-                    type="number"
-                    placeholder='numero'
-                    value={form.number}
-                    onChange={onChange}
-                    name="number"
-                />
-                <StyledInput
-                    type="text"
-                    placeholder='bairro'
-                    value={form.neighbourhood}
-                    onChange={onChange}
-                    name="neighbourhood"
-                />
-                <StyledInput
-                    type="text"
-                    placeholder='cidade'
-                    value={form.city}
-                    onChange={onChange}
-                    name="city"
-                />
-                <StyledInput
-                    type="text"
-                    placeholder='estado'
-                    value={form.state}
-                    onChange={onChange}
-                    name="state"
-                />
-                <StyledInput
-                    type="text"
-                    placeholder='complemento'
-                    value={form.complement}
-                    onChange={onChange}
-                    name="complement"
-                />
-                <StyledButton
-                    type="submit"
-                    >
-                        Salvar
-                    </StyledButton>
-                </addAdressFormContainer>
-            </InputsContainer>
-    )
+  const navigate = useNavigate();
+
+  const handleSaveAddress = (event) => {
+    event.preventDefault();
+
+    saveAddress(form, clear, navigate)
+  }
+
+  return (
+    <FormContainer onSubmit={handleSaveAddress}>
+      <StyledInput
+        name="street"
+        id="street"
+        label="Rua"
+        type="text"
+        variant="outlined"
+        margin="normal"
+        fullWidth
+        required
+        value={form.street}
+        onChange={onChange}
+      />
+
+      <StyledInput
+        name="number"
+        id="number"
+        label="Número"
+        type="number"
+        variant="outlined"
+        margin="normal"
+        fullWidth
+        required
+        value={form.number}
+        onChange={onChange}
+      />
+
+      <StyledInput
+        name="complement"
+        id="complement"
+        label="Complemento"
+        type="text"
+        variant="outlined"
+        margin="normal"
+        fullWidth
+        value={form.complement}
+        onChange={onChange}
+      />
+
+      <StyledInput
+        name="neighbourhood"
+        id="neighbourhood"
+        label="Bairro"
+        type="text"
+        variant="outlined"
+        margin="normal"
+        fullWidth
+        required
+        value={form.neighbourhood}
+        onChange={onChange}
+      />
+
+      <StyledInput
+        name="city"
+        id="city"
+        label="Cidade"
+        type="text"
+        variant="outlined"
+        margin="normal"
+        fullWidth
+        required
+        value={form.city}
+        onChange={onChange}
+      />
+
+      <StyledInput
+        name="state"
+        id="state"
+        label="Estado"
+        type="text"
+        variant="outlined"
+        margin="normal"
+        fullWidth
+        required
+        value={form.state}
+        onChange={onChange}
+      />
+
+
+      <StyledButton
+        type="submit"
+        fullWidth
+        variant="contained"
+        margin="normal"
+      >
+        Salvar
+      </StyledButton>
+
+    </FormContainer>
+  )
 }
-export default AdressForm;    
+
+export default AddressForm;

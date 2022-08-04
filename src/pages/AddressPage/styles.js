@@ -14,11 +14,11 @@ export const Container = styled.div `
     justify-content: flex-start;
     align-items: center;
     position: relative;
-    padding: 6rem 0 2rem;
+    padding: 0 0 2rem;
 `
 
 export const PageTitle = styled.h1 `
-    margin: 2rem 0 1rem;
+    margin: 1rem 0;
     font-size: 1.2rem;
     font-weight: 500;
 `
@@ -26,10 +26,4 @@ export const PageTitle = styled.h1 `
 export const StyledButton = styled(Button)`
     margin: 1rem 0 0 !important;
     background-color: ${midGreen} !important;
-`
-
-export const StyledLink = styled.p `
-    margin: 1rem 0 0 !important;
-    font-weight: 500;
-    cursor: pointer;
 `

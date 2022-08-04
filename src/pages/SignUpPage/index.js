@@ -1,29 +1,32 @@
-import React from 'react';
-import { goToLogin } from '../../router/cordinator';
-import { useNavigate } from 'react-router-dom'
-import SignUpForm from './form.js';
-import { ScreenContainer, SignUpButtonContainer, StyledButton } from './styles.js';
+import React from 'react'
+import Logo from '../../components/Logo';
 
-const SignUpPage = () => {
-  const navigate = useNavigate ()
+// styles
+import { Container, PageTitle } from './styles';
 
-  return (
-    <ScreenContainer>
-      <p> Future Eats</p>
-      <SignUpForm />
-      <SignUpButtonContainer>
-        <StyledButton
-          onClick={() => goToLogin(navigate)}
-          fullWidth
-          color="secundary"
-          variant="contained"
-          margin="normal"
-        >
-          Login
-        </StyledButton>
-      </SignUpButtonContainer>
-    </ScreenContainer>
-  )
+// components
+import SignupForm from './form';
+import Header from '../../components/Header';
+
+// navigate
+import { useNavigate } from 'react-router-dom';
+
+// routes
+import { goToLogin } from '../../router/coordinator'
+
+
+const SignupPage = () => {
+
+    const navigate = useNavigate();
+
+    return (
+        <Container>
+            <Header goTo={() => goToLogin(navigate)}/>
+            <Logo/>
+            <PageTitle>Cadastro</PageTitle>
+            <SignupForm/>
+        </Container>
+    )
 }
 
-export default SignUpPage;
+export default SignupPage;

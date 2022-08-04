@@ -1,5 +1,4 @@
-import { useEffect } from "react"
-
+import { useEffect } from "react";
 
 export const goToLogin = (navigate) => {
     navigate("/login")
@@ -9,16 +8,20 @@ export const goToSignUp = (navigate) => {
     navigate("/cadastro")
 }
 
+export const goToAddress = (navigate) => {
+    navigate("/endereco")
+}
+
+export const goToFeed = (navigate) => {
+    navigate("/feed")
+}
+
 export const goToSearch = (navigate) => {
     navigate("../feed/search")
 }
 
 export const goBackPage = (navigate) => {
     navigate(-1)
-}
-
-export const goToAddAdress = (navigate) => {
-    navigate("/endereço")
 }
 
 export const useProtectedPage = (navigate) => {
