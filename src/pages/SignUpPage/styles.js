@@ -1,55 +1,29 @@
 import styled from "styled-components";
-import {secundaryColor} from '../../constants/colors'
 
-export const SignUpPageContainer = styled.div `
+// material ui
+import Button from '@material-ui/core/Button';
 
-`
+// constants
+import { midGreen } from '../../constants/colors'
 
-export const ScreenContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+export const Container = styled.div `
     width: 100%;
-    height: 100vh;
-    
-
-    hr {
-    margin: 15px 0 0;
-}
-`
-
-
-export const SignUpButtonContainer = styled.div`
-     width: 100%;
-     max-width: 450px;
-    
-`
-
-export const InputsContainer = styled.div`
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    width: 80vw;
-    max-width: 450px;
+    justify-content: flex-start;
     align-items: center;
-    margin: 3rem 0 20px;
+    position: relative;
+    padding: 0 0 2rem;
 `
 
-export const SignUpFormContainer = styled.form`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 450px;
-    margin-bottom: 20px;
+export const PageTitle = styled.h1 `
+    margin: 2rem 0 1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
 `
 
-export const StyledInput = styled.input `
-
-`
-
-// common
-export const StyledButton = styled.button `
-    border-radius: 20px !important;
-    background-color: ${secundaryColor};
-
+export const StyledButton = styled(Button)`
+    margin: 1rem 0 0 !important;
+    background-color: ${midGreen} !important;
 `

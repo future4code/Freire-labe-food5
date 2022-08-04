@@ -1,9 +1,19 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom';
-import useForm from '../../hooks/useForm';
-import { login } from '../../services/users';
-import { InputsContainer, LoginFormContainer, StyledInput, StyledButton } from './styles';
+import React from 'react';
 
+// global style
+import { FormContainer, StyledInput } from '../../global/globalStyles';
+
+// style
+import { StyledButton } from './styles';
+
+// hooks
+import { useForm } from '../../hooks/useForm';
+
+// router
+import { useNavigate } from 'react-router-dom';
+
+// request
+import { login } from '../../services/user';
 
 const LoginForm = () => {
     const [form, onChange, clear] = useForm({
@@ -11,37 +21,53 @@ const LoginForm = () => {
         password: ''
     })
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
-    const handleOnSubmit = (event) => {
-        event.preventDefault()
-
+    const handleLogin = (event) => {
+        event.preventDefault();
+    
         login(form, clear, navigate)
-    }
-    return (
-        <InputsContainer>
-            <LoginFormContainer onSubmit={handleOnSubmit}>
-                <StyledInput 
-                    type="email" 
-                    placeholder='e-mail'
-                    value={form.email}
-                    onChange={onChange}
-                    name="email"
-                />
-                <StyledInput 
-                    type="password" 
-                    placeholder='senha'
-                    value={form.password}
-                    onChange={onChange}
-                    name="password"
-                />
+      }
 
-                <StyledButton type='submit'>
-                    Logar
-                </StyledButton>
-            </LoginFormContainer>
-        </InputsContainer>
+    return (
+        <FormContainer onSubmit={handleLogin}>
+            <StyledInput
+                name="email"
+                id="email"
+                label="E-mail"
+                type="email"
+                variant="outlined"
+                margin="normal"
+                fullWidth
+                required
+                value={form.email}
+                onChange={onChange}
+            />
+
+            <StyledInput
+                name="password"
+                id="outlined-adornment-password"
+                label="Senha"
+                type={"password"}
+                variant="outlined"
+                margin="normal"
+                fullWidth
+                required
+                value={form.password}
+                onChange={onChange}
+            />
+
+            <StyledButton
+                type="submit"
+                fullWidth
+                variant="contained"
+                margin="normal"
+            >
+                Entrar
+            </StyledButton>
+
+        </FormContainer>
     )
 }
 
-export default LoginForm
+export default LoginForm;
