@@ -9,7 +9,7 @@ import FeedPage from '../pages/FeedPage/FeedPage';
 import SearchPage from '../pages/SearchPage/SearchPage';
 import PreLoginPage from '../pages/PreLoginPage';
 import AddressPage from '../pages/AddressPage';
-import SignupPage from '../pages/SignupPage';
+import SignupPage from '../pages/SignupPage/';
 
 const Router = () => {
     return (
