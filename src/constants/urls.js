@@ -1,2 +1,2 @@
-export const BASE_URL = ` https://us-central1-missao-newton.cloudfunctions.net/{{futureEatsB}}/login `
-
+const appName = "futureEatsB"
+export const BASE_URL = `https://us-central1-missao-newton.cloudfunctions.net/${appName}`
