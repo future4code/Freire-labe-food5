@@ -19,7 +19,7 @@ export const login = (body, clear, navigate) => {
     console.log(body)
     axios.post(`${BASE_URL}/login`, body)
         .then((res) => {
-            JSON.stringify(localStorage.setItem("token", res.data.token))
+            localStorage.setItem("token", JSON.stringify(res.data.token))
             clear()
             goToFeed(navigate)
         })
@@ -30,7 +30,7 @@ export const signUp = (body, clear, navigate) => {
     console.log(body)
     axios.post(`${BASE_URL}/signup`, body)
         .then((res) => {
-            JSON.stringify(localStorage.setItem("token", res.data.token))
+            localStorage.setItem("token", JSON.stringify(res.data.token))
             console.log(res)
             clear()
             goToAddress(navigate)

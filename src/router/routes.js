@@ -6,15 +6,16 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // components
 import LoginPage from '../pages/LoginPage';
 import FeedPage from '../pages/FeedPage/FeedPage';
-import SignUpPage from '../pages/SignUpPage';
 import SearchPage from '../pages/SearchPage/SearchPage';
 import PreLoginPage from '../pages/PreLoginPage';
 import AddressPage from '../pages/AddressPage';
+import SignupPage from '../pages/SignupPage';
 
 const Router = () => {
     return (
         <BrowserRouter>
             <Routes>
+                <Route path='/' element={<PreLoginPage />} />
                 <Route path='/login' element={<LoginPage />} />
                 <Route path='/cadastro' element={<SignupPage />} />
                 <Route path='/endereco' element={<AddressPage />} />
