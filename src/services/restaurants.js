@@ -15,4 +15,20 @@ export const GetRestaurants = (setRestaurants) => {
     })
 }
 
+export const GetRestaurantDetail = (id, setRestaurant) => {
+    const token = JSON.parse(localStorage.getItem('token'))
+    axios.get(`${BASE_URL}/restaurants/${id}`, {
+        headers: {
+            auth: token
+        }
+    })
+    .then(res => {
+        console.log(res.data.restaurant)
+        setRestaurant(res.data.restaurant)
+    })
+    .catch(err => {
+        console.log(err)
+    })
+}
+
 export const restaurantsCategories = ["Todas", "Árabe", "Asiática", "Hamburguer", "Italiana", "Sorvetes", "Carnes", "Baiana", "Petiscos", "Mexicana"]
