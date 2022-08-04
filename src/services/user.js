@@ -41,7 +41,7 @@ export const signUp = (body, clear, navigate) => {
 export const saveAddress = (body, clear, navigate) => {
     axios.put(`${BASE_URL}/address`, body, headers)
         .then((res) => {
-            console.log(res)
+            localStorage.setItem("token", JSON.stringify(res.data.token))
             clear()
             goToFeed(navigate)
         })
