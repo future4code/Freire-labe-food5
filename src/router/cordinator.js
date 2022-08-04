@@ -32,3 +32,13 @@ export const useProtectedPage = (navigate) => {
         
     }, [navigate])
 }
+export const goToEditAddressPage = (navigate) => {
+    navigate("/perfil/editarEndereco")
+}
+
+export const goToEditProfilePage = (navigate) => {
+    navigate("/perfil/editarPerfil")
+}
+export const goToProfilePage = (navigate) => {
+    navigate("/perfil")
+}

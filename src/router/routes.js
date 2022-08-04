@@ -8,6 +8,9 @@ import SignUpPage from '../pages/SignUpPage';
 import SearchPage from '../pages/SearchPage/SearchPage';
 import AddressPage from '../pages/AddressPage'
 import PreLoginPage from '../pages/PreLoginPage';
+import ProfilePage from '../pages/ProfilePage/ProfilePage';
+import EditAddressPage  from '../pages/EditAddressPage/EditAddressPage';
+import EditProfilePage  from '../pages/EditProfilePage/EditProfilePage';
 
 const Router = () => {
   return (
@@ -19,6 +22,9 @@ const Router = () => {
             <Route path="/feed" exact element={<FeedPage/>}/>
             <Route path="/feed/search" exact element={<SearchPage />}/>
             <Route path="/endereco"exact element={<AddressPage/>}/>
+            <Route path="/perfil"exact element={<ProfilePage/>}/>
+            <Route path="/perfil/editarPerfil"exact element={<EditProfilePage/>}/>
+            <Route path="/perfil/editarEndereco"exact element={<EditAddressPage/>}/>
         </Routes>
     </BrowserRouter>
   )
