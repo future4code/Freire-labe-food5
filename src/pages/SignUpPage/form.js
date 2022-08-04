@@ -1,70 +1,119 @@
-import React from 'react'
+import React from 'react';
+
+// global style
+import { FormContainer, StyledInput } from '../../global/globalStyles';
+
+// style
+import { StyledButton } from './styles';
+
+// hooks
+import { useForm } from '../../hooks/useForm';
+
+// router
 import { useNavigate } from 'react-router-dom';
-import useForm from '../../hooks/useForm';
-import { signUp } from '../../services/users';
-import { InputsContainer, SignUpFormContainer, StyledInput, StyledButton } from './styles';
 
-const SignUpForm = () => {
-    const [form, onChange, clear] = useForm({
-        name: '',
-        email: '',
-        cpf: '',
-        password: '',
-        confirmar: '',
-    })
-    const navigate = useNavigate()
+// request
+import { signUp } from '../../services/user';
 
-    const handleOnSubmit = (event) => {
-        event.preventDefault()
+const SignupForm = () => {
+  const [form, onChange, clear] = useForm({
+    name: '',
+    email: '',
+    cpf: '',
+    password: '',
+    confirmPassword: ''
+  })
 
-        signUp(form, clear, navigate)
-    }
+  const navigate = useNavigate();
 
-    return (
-        <InputsContainer>
-            <SignUpFormContainer onSubmit={handleOnSubmit}>
-                <StyledInput
-                    type="name"
-                    placeholder='name'
-                    value={form.name}
-                    onChange={onChange}
-                    name="name"
-                />
-                <StyledInput
-                    type="email"
-                    placeholder='E-mail'
-                    value={form.email}
-                    onChange={onChange}
-                    name="email"
-                />
-                <StyledInput
-                    type="text"
-                    placeholder='cpf'
-                    value={form.cpf}
-                    onChange={onChange}
-                    name="cpf"
-                />
-                <StyledInput
-                    type="password"
-                    placeholder='senha'
-                    value={form.password}
-                    onChange={onChange}
-                    name="password"
-                />
-                <StyledInput
-                    type="password"
-                    placeholder='confirmar'
-                    value={form.confirmar}
-                    onChange={onChange}
-                    name="confirmar"
-                />
-                <StyledButton type='submit'>
-                    Criar
-                </StyledButton>
-            </SignUpFormContainer>
-        </InputsContainer>
-    )
+  const handleSignUp = (event) => {
+    event.preventDefault();
+
+    const { password, confirmPassword } = form;
+
+    if(password !== confirmPassword) return; 
+
+    signUp(form, clear, navigate)
+  }
+
+  return (
+    <FormContainer onSubmit={handleSignUp}>
+      <StyledInput
+        name="name"
+        id="name"
+        label="Nome"
+        type="name"
+        variant="outlined"
+        margin="normal"
+        fullWidth
+        required
+        value={form.name}
+        onChange={onChange}
+      />
+
+      <StyledInput
+        name="email"
+        id="email"
+        label="E-mail"
+        type="email"
+        variant="outlined"
+        margin="normal"
+        fullWidth
+        required
+        value={form.email}
+        onChange={onChange}
+      />
+
+      <StyledInput
+        name="cpf"
+        id="cpf"
+        label="CPF"
+        type="cpf"
+        variant="outlined"
+        margin="normal"
+        fullWidth
+        required
+        value={form.cpf}
+        onChange={onChange}
+      />
+
+      <StyledInput
+        name="password"
+        id="outlined-adornment-password"
+        label="Senha"
+        type={"password"}
+        variant="outlined"
+        margin="normal"
+        fullWidth
+        required
+        value={form.password}
+        onChange={onChange}
+      />
+
+      <StyledInput
+        name="confirmPassword"
+        id="outlined-adornment-passord"
+        label="Senha"
+        type={"password"}
+        variant="outlined"
+        margin="normal"
+        fullWidth
+        required
+        value={form.confirmPassword}
+        onChange={onChange}
+      />
+
+      <StyledButton
+        type="submit"
+        fullWidth
+        variant="contained"
+        margin="normal"
+      >
+        Criar
+      </StyledButton>
+
+    </FormContainer>
+  )
 }
 
-export default SignUpForm
-
+export default SignupForm;

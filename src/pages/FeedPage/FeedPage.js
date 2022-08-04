@@ -4,7 +4,7 @@ import ScrollContainer from "react-indiana-drag-scroll"
 
 import SearchIcon from '../../assets/img/search_icon.svg'
 import CardRestaurant from '../../components/CardRestaurantFeed/CardRestaurant'
-import { goToSearch } from '../../router/cordinator'
+import { goToSearch } from '../../router/coordinator'
 import { GetRestaurants, restaurantsCategories } from '../../services/restaurants'
 import { GlobalStyle, MainContainer, SearchContainer, InputStyled, CategoriasContainer, CategoriaLi, Header } from './styled'
 

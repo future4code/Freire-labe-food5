@@ -1,5 +1,6 @@
-export const primaryColor = "#000000"
-export const secundaryColor = "#5CB646"
-export const neutralColor = "#B8B8B8"
-export const backgroundColor = "#000000 25%"
-export const effectColor = "#5CB646 50%"
+export const black = "#0e0e0e";
+export const blackOppacity = "#000000 25%";
+export const white = "#F2F2F2";
+export const midGreen = "#5CB646"
+export const midGreenOppacity = "#5CB646 50%";
+export const gray = "#B8B8B8";
