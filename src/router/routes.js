@@ -5,18 +5,21 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // components
 import LoginPage from '../pages/LoginPage';
+import FeedPage from '../pages/FeedPage/FeedPage';
+import SignUpPage from '../pages/SignUpPage';
+import SearchPage from '../pages/SearchPage/SearchPage';
 import PreLoginPage from '../pages/PreLoginPage';
-import SignupPage from '../pages/SignupPage';
 import AddressPage from '../pages/AddressPage';
 
 const Router = () => {
     return (
         <BrowserRouter>
             <Routes>
-            <Route exact path='/' element={<PreLoginPage />} />
                 <Route path='/login' element={<LoginPage />} />
                 <Route path='/cadastro' element={<SignupPage />} />
                 <Route path='/endereco' element={<AddressPage />} />
+                <Route path="/feed" exact element={<FeedPage />} />
+                <Route path="/feed/search" exact element={<SearchPage />} />
             </Routes>
         </BrowserRouter>
     )

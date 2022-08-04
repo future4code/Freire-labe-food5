@@ -14,6 +14,13 @@ export const goToAddress = (navigate) => {
 
 export const goToFeed = (navigate) => {
     navigate("/feed")
+
+export const goToSearch = (navigate) => {
+    navigate("../feed/search")
+}
+
+export const goBackPage = (navigate) => {
+    navigate(-1)
 }
 
 export const useProtectedPage = (navigate) => {
