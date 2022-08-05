@@ -44,18 +44,18 @@ export const CardOrderHistory = (props) => {
     let dataAtual = new Date(createdAt)
     let dia = dataAtual.getDate();
     let mes
-    if (dataAtual.getMonth() == 0){mes = "Janeiro"};
-    if (dataAtual.getMonth() == 1){mes = "Fevereiro"};
-    if (dataAtual.getMonth() == 2){mes = "Março"};
-    if (dataAtual.getMonth() == 3){mes = "Abril"};
-    if (dataAtual.getMonth() == 4){mes = "Maio"};
-    if (dataAtual.getMonth() == 5){mes = "Junho"};
-    if (dataAtual.getMonth() == 6){mes = "Julho"};
-    if (dataAtual.getMonth() == 7){mes = "Agosto"};
-    if (dataAtual.getMonth() == 8){mes = "Setembro"};
-    if (dataAtual.getMonth() == 9){mes = "Outubro"};
-    if (dataAtual.getMonth() == 10){mes = "Novembro"};
-    if (dataAtual.getMonth() == 11){mes = "Dezembro"};
+    if (dataAtual.getMonth() === 0){mes = "Janeiro"};
+    if (dataAtual.getMonth() === 1){mes = "Fevereiro"};
+    if (dataAtual.getMonth() === 2){mes = "Março"};
+    if (dataAtual.getMonth() === 3){mes = "Abril"};
+    if (dataAtual.getMonth() === 4){mes = "Maio"};
+    if (dataAtual.getMonth() === 5){mes = "Junho"};
+    if (dataAtual.getMonth() === 6){mes = "Julho"};
+    if (dataAtual.getMonth() === 7){mes = "Agosto"};
+    if (dataAtual.getMonth() === 8){mes = "Setembro"};
+    if (dataAtual.getMonth() === 9){mes = "Outubro"};
+    if (dataAtual.getMonth() === 10){mes = "Novembro"};
+    if (dataAtual.getMonth() === 11){mes = "Dezembro"};
    
     let ano = dataAtual.getFullYear();
     let data = (dia + " de " + mes + " de " + ano )

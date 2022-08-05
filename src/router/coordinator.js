@@ -20,6 +20,10 @@ export const goToSearch = (navigate) => {
     navigate("../feed/search")
 }
 
+export const goToCart = (navigate) => {
+    navigate("/carrinho")
+}
+
 export const goBackPage = (navigate) => {
     navigate(-1)
 }
@@ -35,4 +39,14 @@ export const useProtectedPage = (navigate) => {
         }
         
     }, [navigate])
+}
+export const goToEditAddressPage = (navigate) => {
+    navigate("/perfil/editarEndereco")
+}
+
+export const goToEditProfilePage = (navigate) => {
+    navigate("/perfil/editarPerfil")
+}
+export const goToProfilePage = (navigate) => {
+    navigate("/perfil")
 }

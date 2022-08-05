@@ -1,29 +1,40 @@
 import React from "react";
 import useForm from "../../hooks/useForm";
 import { updateProfile } from "../../services/requisicoes";
+import {Container, Button, Input, Header, ButtonSave, Form, GlobalStyle } from './styled'
+import { BASE_URL } from "../../constants/urls";
+import {useNavigate} from 'react-router-dom'
+import { goToProfilePage } from "../../router/coordinator";
+import backPageIcon from '../../assets/img/back-page_icon.svg'
 
-export const EditAddressPage = (props) => {
-    const {form, onChange, cleanFields} = useForm({street: "", number: "", neighbourhood: "", city: '', state: '', complement: ''})
-
+const EditAddressPage = (props) => {
+    const [form, onChange] = useForm({street: "", number: "", neighbourhood: "", city: '', state: '', complement: ''})
+    const navigate = useNavigate()
     const saveUpdate = () => {
-        const url = 'https://us-central1-missao-newton.cloudfunctions.net/futureEatsB/address'
-        updateProfile(url, form, props.getData)
-        //navigate voltando para pagina de perfil
+        const url = `${BASE_URL}/address`
+        updateProfile(url, form)
+        goToProfilePage(navigate)
 
     }
     return(
-        <div>
-            <button>voltar</button>
-            <form onSubmit={saveUpdate}>
-                <input type="text" onChange={onChange} name = 'street' value = {form.street} required placeholder="Rua"/>
-                <input type="number" onChange={onChange} name = 'number' value = {form.number} required placeholder="Número"/>
-                <input type= "text" onChange={onChange} name = 'neighbourhood' value = {form.neighbourhood} required placeholder="Bairro" />
-                <input type= "text" onChange={onChange} name = 'city' value = {form.city} required placeholder="Cidade" />
-                <input type= "text" onChange={onChange} name = 'state' value = {form.state} required placeholder="Estado" />
-                <input type= "text" onChange={onChange} name = 'complement' value = {form.complement}  placeholder="Complemento" />
-                <button>Salvar</button>
-            </form>
-        </div>
+        <Container>
+            <GlobalStyle />
+            <Header>
+                <Button onClick = {() => goToProfilePage(navigate)}><img src={backPageIcon} alt="" /></Button>
+                <p>Endereço</p>
+            </Header>
+            <Form onSubmit={saveUpdate}>
+                <Input type="text" onChange={onChange} name = 'street' value = {form.street} required placeholder="Rua"/>
+                <Input type="number" onChange={onChange} name = 'number' value = {form.number} required placeholder="Número"/>
+                <Input type= "text" onChange={onChange} name = 'neighbourhood' value = {form.neighbourhood} required placeholder="Bairro" />
+                <Input type= "text" onChange={onChange} name = 'city' value = {form.city} required placeholder="Cidade" />
+                <Input type= "text" onChange={onChange} name = 'state' value = {form.state} required placeholder="Estado" />
+                <Input type= "text" onChange={onChange} name = 'complement' value = {form.complement}  placeholder="Complemento" />
+                <ButtonSave><strong>Salvar</strong></ButtonSave>
+            </Form>
+        </Container>
     )
 
 }
+
+export default EditAddressPage

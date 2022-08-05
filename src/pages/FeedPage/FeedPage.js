@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import ScrollContainer from "react-indiana-drag-scroll"
-
 import SearchIcon from '../../assets/img/search_icon.svg'
 import CardRestaurant from '../../components/CardRestaurantFeed/CardRestaurant'
 import { goToSearch } from '../../router/coordinator'
 import { GetRestaurants, restaurantsCategories } from '../../services/restaurants'
 import { GlobalStyle, MainContainer, SearchContainer, InputStyled, CategoriasContainer, CategoriaLi, Header } from './styled'
+import { Footer } from '../../components/Footer/Footer'
 
 const FeedPage = () => {
     const navigate = useNavigate()
@@ -76,6 +76,7 @@ const FeedPage = () => {
                 <div>
                     {listaRestaurantesRender}
                 </div>
+                <Footer/>
             </MainContainer>
         </div>
     )
