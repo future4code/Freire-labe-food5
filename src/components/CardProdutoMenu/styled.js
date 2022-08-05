@@ -61,3 +61,13 @@ export const BotaoAdicionarProduto = styled.div`
     justify-content: center;
     color: ${midGreen};
 `
+export const BotaoRemoverProduto = styled.div`
+    padding: 0.5rem;
+    height: 1.938rem;
+    border-radius: 0.5rem 0 0.5rem 0;
+    border: solid 1px #e02020;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e02020;
+`
