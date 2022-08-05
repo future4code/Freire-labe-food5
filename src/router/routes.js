@@ -12,7 +12,8 @@ import ProfilePage from '../pages/ProfilePage/ProfilePage';
 import EditAddressPage  from '../pages/EditAddressPage/EditAddressPage';
 import EditProfilePage  from '../pages/EditProfilePage/EditProfilePage';
 import AddressPage from '../pages/AddressPage';
-import SignupPage from '../pages/SignupPage';
+import SignupPage from '../pages/SignUpPage';
+import CartPage from '../pages/CartPage/CartPage'
 
 const Router = () => {
   return (
@@ -27,6 +28,8 @@ const Router = () => {
             <Route path="/perfil"exact element={<ProfilePage/>}/>
             <Route path="/perfil/editarPerfil"exact element={<EditProfilePage/>}/>
             <Route path="/perfil/editarEndereco"exact element={<EditAddressPage/>}/>
+
+            <Route path="/carrinho"exact element={<CartPage/>}/>
         </Routes>
     </BrowserRouter>
   )

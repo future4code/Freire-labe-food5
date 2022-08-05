@@ -1,6 +1,6 @@
 import React, { useState }from 'react'
 import {useNavigate} from 'react-router-dom'
-import { goToProfilePage,  } from '../../router/cordinator'
+import { goToProfilePage, goToCartPage, goToFeed } from '../../router/coordinator'
 import avatar from '../../assets/img/avatar.svg'
 import avatarActive from '../../assets/img/avatarActive.svg'
 import shoppingCart from '../../assets/img/shopping-cart.svg'
@@ -38,6 +38,7 @@ export const Footer = () => {
     if(icone1 === true){
         iconeHome = homepageActive
     }
+    
     if(icone2 === true){
         iconeShop = shoppingCartActive
     }
@@ -49,11 +50,13 @@ export const Footer = () => {
         setIcone1(true)
         setIcone2(false)
         setIcone3(false)
+        goToFeed(navigate)
     }
     const changeColor1 = () => {
         setIcone1(false)
         setIcone2(true)
         setIcone3(false)
+        goToCartPage(navigate)
     }
     const changeColor2 = () => {
         setIcone1(false)

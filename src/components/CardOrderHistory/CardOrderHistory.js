@@ -3,6 +3,11 @@ import styled from 'styled-components'
 const Container = styled.div`
     display: flex;
     flex-direction: column;
+    width: 90%;
+    margin: 7px auto;
+    padding: 16px;
+    border-radius: 8px;
+    border: solid 1px #b8b8b8;
 `
 const PName = styled.p`
 height: 18px;
@@ -56,7 +61,7 @@ export const CardOrderHistory = (props) => {
     if (dataAtual.getMonth() == 9){mes = "Outubro"};
     if (dataAtual.getMonth() == 10){mes = "Novembro"};
     if (dataAtual.getMonth() == 11){mes = "Dezembro"};
-   
+
     let ano = dataAtual.getFullYear();
     let data = (dia + " de " + mes + " de " + ano )
     return(

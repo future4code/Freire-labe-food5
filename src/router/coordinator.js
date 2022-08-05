@@ -46,3 +46,10 @@ export const goToEditProfilePage = (navigate) => {
 export const goToProfilePage = (navigate) => {
     navigate("/perfil")
 }
+
+
+
+
+export const goToCartPage = (navigate) => {
+    navigate("/carrinho")
+}

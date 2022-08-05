@@ -6,7 +6,7 @@ import { BASE_URL } from "../constants/urls";
 // routes
 import { goToAddress, goToFeed } from "../router/coordinator";
 
-const token = JSON.parse(window.localStorage.getItem("token"))
+const token = window.localStorage.getItem("token")
 
 const headers = {
     headers: {

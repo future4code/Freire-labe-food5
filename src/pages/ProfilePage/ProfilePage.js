@@ -2,7 +2,7 @@ import React from "react";
 import { useRequestData } from "../../services/requisicoes";
 import { CardOrderHistory } from "../../components/CardOrderHistory/CardOrderHistory";
 import {useNavigate} from 'react-router-dom'
-import { goToEditAddressPage, goToEditProfilePage } from "../../router/cordinator";
+import { goToEditAddressPage, goToEditProfilePage } from "../../router/coordinator";
 import edit from '../../assets/img/edit.svg'
 import {Container,
     Header,
@@ -61,7 +61,7 @@ import { Footer } from "../../components/Footer/Footer";
             }
             <P>Histórico de pedidos:</P>
             <Hr />
-            {!loading && orderHistory.orders && orderHistory.orders.length > 0 ? <ContainerOrder>{order}</ContainerOrder>: <P1>você ainda não fez nenhum pedido :/</P1>
+            {!loading && orderHistory.orders && orderHistory.orders.length > 0 ? <div>{order}</div>: <P1>você ainda não fez nenhum pedido :/</P1>
             }
             </Conteudo>
             <Footer/>
