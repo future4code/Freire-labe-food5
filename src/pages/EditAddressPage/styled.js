@@ -38,7 +38,7 @@ export const Header = styled.div`
     }
 `
 export const ButtonSave = styled.button`
-    width: 84%;
+    width: 100%;
     height: 42px;
     background-color: #5cb646;
     padding: 12px 16px;
@@ -48,8 +48,9 @@ export const ButtonSave = styled.button`
 export const Form= styled.form`
     display: flex;
     flex-direction: column;
-   justify-content: center;
+    justify-content: center;
     align-items: center;
-    gap: 16px;
     margin-top: 24px;
+    margin: auto;
+    width: 90%;
 `
