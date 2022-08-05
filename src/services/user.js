@@ -6,7 +6,7 @@ import { BASE_URL } from "../constants/urls";
 // routes
 import { goToAddress, goToFeed } from "../router/coordinator";
 
-const token = JSON.parse(window.localStorage.getItem("token"))
+const token = window.localStorage.getItem("token")
 
 const headers = {
     headers: {
@@ -19,6 +19,7 @@ export const login = (body, clear, navigate) => {
     console.log(body)
     axios.post(`${BASE_URL}/login`, body)
         .then((res) => {
+            token && localStorage.removeItem('token')
             localStorage.setItem("token", JSON.stringify(res.data.token))
             clear()
             goToFeed(navigate)
@@ -30,6 +31,7 @@ export const signUp = (body, clear, navigate) => {
     console.log(body)
     axios.post(`${BASE_URL}/signup`, body)
         .then((res) => {
+            token && localStorage.removeItem('token')
             localStorage.setItem("token", JSON.stringify(res.data.token))
             console.log(res)
             clear()
@@ -41,6 +43,7 @@ export const signUp = (body, clear, navigate) => {
 export const saveAddress = (body, clear, navigate) => {
     axios.put(`${BASE_URL}/address`, body, headers)
         .then((res) => {
+            token && localStorage.removeItem('token')
             localStorage.setItem("token", JSON.stringify(res.data.token))
             clear()
             goToFeed(navigate)

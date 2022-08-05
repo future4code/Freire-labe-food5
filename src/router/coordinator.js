@@ -20,6 +20,10 @@ export const goToSearch = (navigate) => {
     navigate("../feed/search")
 }
 
+export const goToCart = (navigate) => {
+    navigate("/carrinho")
+}
+
 export const goBackPage = (navigate) => {
     navigate(-1)
 }
@@ -49,4 +53,11 @@ export const goToEditProfilePage = (navigate) => {
 }
 export const goToProfilePage = (navigate) => {
     navigate("/perfil")
+}
+
+
+
+
+export const goToCartPage = (navigate) => {
+    navigate("/carrinho")
 }

@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Button from '@material-ui/core/Button';
 
 // constants
-import { midGreen } from '../../constants/colors'
+import { midGreen } from '../../constants/colors';
 
 export const Container = styled.div `
     width: 100%;

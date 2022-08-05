@@ -109,15 +109,15 @@ export const Hr = styled.hr`
     background: black;
     height: 1px;
     border: none;
+    margin: auto;
 `
-export const ContainerOrder = styled.div`
-    width: 80%;
-    height: 102px;
-    margin: 7px auto;
-    padding: 16px;
-    border-radius: 8px;
-    border: solid 1px #b8b8b8;
-`
+// export const ContainerOrder = styled.div`
+//     width: 80%;
+//     margin: 7px auto;
+//     padding: 16px;
+//     border-radius: 8px;
+//     border: solid 1px #b8b8b8;
+// `
 
 export const P1 = styled.p`
    text-align: center; 
