@@ -61,7 +61,7 @@ import { Footer } from "../../components/Footer/Footer";
             }
             <P>Histórico de pedidos:</P>
             <Hr />
-            {!loading && orderHistory.orders && orderHistory.orders.length > 0 ? <ContainerOrder>{order}</ContainerOrder>: <P1>você ainda não fez nenhum pedido :/</P1>
+            {!loading && orderHistory.orders && orderHistory.orders.length > 0 ? <div>{order}</div>: <P1>você ainda não fez nenhum pedido :/</P1>
             }
             </Conteudo>
             <Footer/>

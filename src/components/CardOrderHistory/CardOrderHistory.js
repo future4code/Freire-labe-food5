@@ -3,6 +3,11 @@ import styled from 'styled-components'
 const Container = styled.div`
     display: flex;
     flex-direction: column;
+    width: 90%;
+    margin: 7px auto;
+    padding: 16px;
+    border-radius: 8px;
+    border: solid 1px #b8b8b8;
 `
 const PName = styled.p`
 height: 18px;
@@ -44,6 +49,7 @@ export const CardOrderHistory = (props) => {
     let dataAtual = new Date(createdAt)
     let dia = dataAtual.getDate();
     let mes
+
     if (dataAtual.getMonth() === 0){mes = "Janeiro"};
     if (dataAtual.getMonth() === 1){mes = "Fevereiro"};
     if (dataAtual.getMonth() === 2){mes = "Março"};

@@ -9,6 +9,7 @@ export const useRequestData = (url) => {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState("");
     const getData = () => {
+        const token = JSON.parse(window.localStorage.getItem("token"))
       setIsLoading(true);
       axios
         .get(url, { headers: { auth: token } })
