@@ -20,6 +20,10 @@ export const goToSearch = (navigate) => {
     navigate("../feed/search")
 }
 
+export const goToCart = (navigate) => {
+    navigate("/carrinho")
+}
+
 export const goBackPage = (navigate) => {
     navigate(-1)
 }

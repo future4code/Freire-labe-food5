@@ -31,7 +31,7 @@ import { Footer } from "../../components/Footer/Footer";
 
  const ProfilePage = () => {
     // let icon = avatarIcon
-    const [profile, isloading, error, getData] = useRequestData(`${BASE_URL}/profile`)
+    const [profile, isloading] = useRequestData(`${BASE_URL}/profile`)
     const [orderHistory, loading] = useRequestData(`${BASE_URL}/orders/history`)
     const order = orderHistory.orders && orderHistory.orders.map((order) => {
             return <CardOrderHistory order = {order} key = {order.expiresAt}/>

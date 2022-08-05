@@ -18,6 +18,8 @@ import styled from 'styled-components'
     background-color: #fff;
     position: fixed;
     bottom: 0;
+    right: 0;
+    left: 0;
     width: 100%;
     height: 49px;
 `
