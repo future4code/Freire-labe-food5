@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components"
+import { gray, midGreen } from "../../constants/colors"
 
 export const GlobalStyle = createGlobalStyle`
     *{
@@ -29,9 +30,40 @@ export const HeaderIcon = styled.img`
     justify-self: flex-start;
 `
 
-
-
 export const MainContainer = styled.main` 
     padding: 0.5rem 1rem;
     width: 100%;
+`
+
+export const RestaurantDetailsContainer = styled.section` 
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem 0 1rem 0;
+    width: 100%;
+    span, div {
+        color: ${gray};
+        margin-bottom: 0.5rem;
+        margin-right: 0.5rem;
+    }
+`
+
+export const RestaurantLogo = styled.img` 
+    border-radius: 0.5rem 0.5rem 0 0;
+    margin-bottom: 0.75rem;
+    max-height: 7.5rem;
+`
+
+export const RestaurantName = styled.p`
+    color: ${midGreen};
+    margin-bottom: 0.5rem;
+`
+
+export const CategoriaTitle = styled.p` 
+    margin-bottom: 0.5rem;
+`
+
+export const CategoriaLine = styled.hr` 
+    height: 1px;
+    width: 100%;
+    background-color: black;
 `

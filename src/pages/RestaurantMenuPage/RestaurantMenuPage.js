@@ -3,16 +3,34 @@ import { useNavigate, useParams } from 'react-router-dom'
 import BackPageIcon from '../../assets/img/back-page_icon.svg'
 import { goBackPage } from '../../router/coordinator'
 import { GetRestaurantDetail } from '../../services/restaurants'
-import { GlobalStyle, MainContainer, Header, HeaderIcon} from './styled'
+import { GlobalStyle, MainContainer, Header, HeaderIcon, RestaurantDetailsContainer, RestaurantLogo, RestaurantName, CategoriaTitle, CategoriaLine} from './styled'
 
 const RestaurantMenuPage = () => {
     const navigate = useNavigate()
     const { id } = useParams()
     const [restaurant, setRestaurant] = useState({})
+    const productCategories = [...new Set(restaurant?.products?.map(produto => produto.category))]
 
     useEffect(() => {
         GetRestaurantDetail(id, setRestaurant)
     }, [])
+
+    let produtosDoRestaurante = productCategories.map((categoria, i) => {
+        return (
+            <section key={i}>
+                <CategoriaTitle>{categoria}</CategoriaTitle>
+                <CategoriaLine />
+                <ul>
+                    {restaurant.products.map(produto => {
+                        if(produto.category === categoria) {
+                            return <p key={produto.id}>{produto.name}</p>
+                        }
+                    })}
+                </ul>
+            </section>
+        )
+    }) 
+    
     return (
         <div>
             <GlobalStyle />
@@ -21,18 +39,19 @@ const RestaurantMenuPage = () => {
                 <p>Restaurante</p>
             </Header>
             <MainContainer>
-                <section>
-                    <img />
-                    <p>nomerestaurante</p>
-                    <span>categoria</span>
+                <RestaurantDetailsContainer>
+                    <RestaurantLogo src={restaurant.logoUrl} alt='logo do restaurante' />
+                    <RestaurantName>{restaurant.name}</RestaurantName>
+                    <span>{restaurant.category}</span>
                     <div>
-                        <span>tempo de entrega</span>
-                        <span>frete</span>
+                        <span>{restaurant.deliveryTime} - {restaurant.deliveryTime + 10} min </span>
+                        <span>R$ {restaurant?.shipping?.toFixed(2)}</span>
                     </div>
                     <div>
-                        Endereço
+                        {restaurant.address}
                     </div>
-                </section>
+                </RestaurantDetailsContainer>
+                {produtosDoRestaurante}
             </MainContainer>
         </div>
     )
