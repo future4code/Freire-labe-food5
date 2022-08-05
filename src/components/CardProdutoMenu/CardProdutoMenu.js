@@ -1,17 +1,19 @@
 import React from 'react'
-import { CardContainer, CardImagem, NumeroPedidoContainer, CardInformacao, ProdutoNome, ProdutoDescricao } from './styled'
+import { CardContainer, CardImagem, NumeroPedidoContainer, CardInformacao, ProdutoNome, ProdutoDescricao, PedidoContainer, BotaoAdicionarProduto } from './styled'
 
 const CardProdutoMenu = (props) => {
     return (
         <CardContainer>
-            <CardImagem src='https://cozinhalegal.com.br/files/receitas/Hamburguer_Caseiro_4.jpg' alt='imagem do produto' />
+            <CardImagem src={props.photoUrl} alt='imagem do produto' />
             <CardInformacao>
-                <ProdutoNome>Nome produto</ProdutoNome>
-                <ProdutoDescricao>descriçao</ProdutoDescricao>
-                <p>preço</p>
+                <ProdutoNome>{props.name}</ProdutoNome>
+                <ProdutoDescricao>{props.description}</ProdutoDescricao>
+                <p>{`R$ ${props.price.toFixed(2)}`}</p>
             </CardInformacao>
-            <NumeroPedidoContainer>2</NumeroPedidoContainer>
-            <NumeroPedidoContainer>adicionar</NumeroPedidoContainer>
+            <PedidoContainer>
+                <NumeroPedidoContainer>2</NumeroPedidoContainer>
+                <BotaoAdicionarProduto>adicionar</BotaoAdicionarProduto>
+            </PedidoContainer>
         </CardContainer>
     )
 }

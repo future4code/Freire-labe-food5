@@ -24,7 +24,15 @@ const RestaurantMenuPage = () => {
                 <ul>
                     {restaurant.products.map(produto => {
                         if(produto.category === categoria) {
-                            return <p key={produto.id}>{produto.name}</p>
+                            return (
+                                <CardProdutoMenu 
+                                    name={produto.name}
+                                    description={produto.description}
+                                    price={produto.price}
+                                    key={produto.id}
+                                    photoUrl={produto.photoUrl}
+                                />
+                            )
                         }
                     })}
                 </ul>
@@ -53,7 +61,6 @@ const RestaurantMenuPage = () => {
                     </div>
                 </RestaurantDetailsContainer>
                 {produtosDoRestaurante}
-                <CardProdutoMenu />
             </MainContainer>
         </div>
     )

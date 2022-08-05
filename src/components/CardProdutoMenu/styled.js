@@ -7,6 +7,7 @@ export const CardContainer = styled.div`
     width: 100%;
     height: 7rem;
     display: flex;
+    margin-bottom: 0.5rem;
 `
 
 export const CardInformacao = styled.div` 
@@ -32,10 +33,31 @@ export const ProdutoDescricao = styled.p`
     margin-bottom: 0.25rem;
 `
 
+export const PedidoContainer = styled.div` 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+`
+
 export const NumeroPedidoContainer = styled.div`
-    position: fixed;
-    right: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 2.063rem;
+    height: 2.063rem;
+    border-radius: 0 0.5rem 0 0.5rem;
+    border: solid 1px ${midGreen};
+    color: ${midGreen};
+`
+
+export const BotaoAdicionarProduto = styled.div`
+    padding: 0.5rem;
+    height: 1.938rem;
+    border-radius: 0.5rem 0 0.5rem 0;
+    border: solid 1px ${midGreen};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: ${midGreen};
 `

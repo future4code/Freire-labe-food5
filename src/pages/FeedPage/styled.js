@@ -24,7 +24,7 @@ export const Header = styled.header`
 `
 
 export const MainContainer = styled.main` 
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1rem 49px 1rem;
     width: 100%;
 `
 

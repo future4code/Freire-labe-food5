@@ -59,11 +59,12 @@ export const RestaurantName = styled.p`
 `
 
 export const CategoriaTitle = styled.p` 
-    margin-bottom: 0.5rem;
+    margin: 1rem 0 0.5rem 0;
 `
 
 export const CategoriaLine = styled.hr` 
     height: 1px;
     width: 100%;
     background-color: black;
+    margin-bottom: 0.5rem;
 `
