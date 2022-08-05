@@ -1,5 +1,8 @@
 import Router from "./router/routes";
 
+// global context
+import { GlobalProvider } from "./provider/GlobalProvider";
+
 // global styles
 import { GlobalStyle } from "./global/globalStyles";
 
@@ -12,8 +15,10 @@ import theme from './constants/theme'
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle/>
-      <Router/>
+      <GlobalProvider>
+        <GlobalStyle/>
+        <Router/>
+      </GlobalProvider>
     </ThemeProvider>
   );
 }
