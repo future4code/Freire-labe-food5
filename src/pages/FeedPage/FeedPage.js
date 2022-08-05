@@ -7,7 +7,6 @@ import { Footer } from '../../components/Footer/Footer'
 import { goToRestaurantMenu, goToSearch } from '../../router/coordinator'
 import { GetRestaurants, restaurantsCategories } from '../../services/restaurants'
 import { GlobalStyle, MainContainer, SearchContainer, InputStyled, CategoriasContainer, CategoriaLi, Header } from './styled'
-import { Footer } from '../../components/Footer/Footer'
 
 const FeedPage = () => {
     const navigate = useNavigate()
