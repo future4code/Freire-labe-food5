@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import BackPageIcon from '../../assets/img/back-page_icon.svg'
+import CardProdutoMenu from '../../components/CardProdutoMenu/CardProdutoMenu'
 import { goBackPage } from '../../router/coordinator'
 import { GetRestaurantDetail } from '../../services/restaurants'
 import { GlobalStyle, MainContainer, Header, HeaderIcon, RestaurantDetailsContainer, RestaurantLogo, RestaurantName, CategoriaTitle, CategoriaLine} from './styled'
@@ -52,6 +53,7 @@ const RestaurantMenuPage = () => {
                     </div>
                 </RestaurantDetailsContainer>
                 {produtosDoRestaurante}
+                <CardProdutoMenu />
             </MainContainer>
         </div>
     )
