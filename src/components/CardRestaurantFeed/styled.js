@@ -6,6 +6,9 @@ export const CardContainer = styled.div`
     min-height: 11.75rem;
     margin: 0.5rem 0;
     width: 100%;
+    &:active, &:focus {
+        box-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+    }
 `
 
 export const CardImagem = styled.img` 

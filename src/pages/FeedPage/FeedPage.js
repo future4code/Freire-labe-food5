@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router-dom'
 import ScrollContainer from "react-indiana-drag-scroll"
 import SearchIcon from '../../assets/img/search_icon.svg'
 import CardRestaurant from '../../components/CardRestaurantFeed/CardRestaurant'
-import { goToSearch } from '../../router/coordinator'
+import { Footer } from '../../components/Footer/Footer'
+import { goToRestaurantMenu, goToSearch } from '../../router/coordinator'
 import { GetRestaurants, restaurantsCategories } from '../../services/restaurants'
 import { GlobalStyle, MainContainer, SearchContainer, InputStyled, CategoriasContainer, CategoriaLi, Header } from './styled'
-import { Footer } from '../../components/Footer/Footer'
 
 const FeedPage = () => {
     const navigate = useNavigate()
@@ -55,6 +55,7 @@ const FeedPage = () => {
                 name={restaurante.name}
                 deliveryTime={restaurante.deliveryTime}
                 shipping={restaurante.shipping}
+                onClick={() => goToRestaurantMenu(navigate, restaurante.id)}
             />
         )
     })
@@ -78,6 +79,7 @@ const FeedPage = () => {
                 </div>
                 <Footer/>
             </MainContainer>
+            <Footer />
         </div>
     )
 }

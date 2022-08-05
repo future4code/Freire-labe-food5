@@ -4,7 +4,7 @@ import { CardContainer, CardImagem, DescricaoContainer, RestaurantName, Restaura
 
 const CardRestaurant = (props) => {
     return (
-        <CardContainer>
+        <CardContainer onClick={props.onClick}>
             <CardImagem src={props.logoUrl} alt='logo do restaurante' />
             <DescricaoContainer>
                 <RestaurantName>{props.name}</RestaurantName>

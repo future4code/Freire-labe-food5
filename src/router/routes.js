@@ -12,13 +12,16 @@ import ProfilePage from '../pages/ProfilePage/ProfilePage';
 import EditAddressPage from '../pages/EditAddressPage/EditAddressPage';
 import EditProfilePage from '../pages/EditProfilePage/EditProfilePage';
 import AddressPage from '../pages/AddressPage';
+import RestaurantMenuPage from '../pages/RestaurantMenuPage/RestaurantMenuPage';
 import SignupPage from '../pages/SignUpPage';
 import CartPage from '../pages/CartPage/CartPage'
 import ErrorPage from '../pages/ErrorPage';
+
 const Router = () => {
   return (
     <BrowserRouter>
         <Routes>
+            <Route path="/feed/restaurant/:id" exact element={<RestaurantMenuPage />} />
             <Route path='/' element={<PreLoginPage />} />
             <Route path='/login' element={<LoginPage />} />
             <Route path='/cadastro' element={<SignupPage />} />
