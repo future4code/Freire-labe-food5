@@ -3,32 +3,32 @@ import styled from 'styled-components'
 import { midGreen } from '../../constants/colors'
 
 const ContainerBg = styled.div` 
-    width: 100%;
-    min-height: 100vh;
+    align-items: center;
+    display: flex;
     background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    left: 0;
+    min-height: 100vh;
+    padding: 1rem;
     position: fixed;
     top: 0;
-    left: 0;
-    padding: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
 `
 
 const ContainerCard = styled.div` 
-    width: 100%;
-    height: 13.5rem;
-    background-color: #ffffff;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-around;
     align-items: center;
+    background-color: #ffffff;
+    display: flex;
     flex-direction: column;
+    height: 13.5rem;
+    justify-content: space-around;
+    padding: 1rem;
+    width: 100%;
 `
 
 const SelectQuantidade = styled.select` 
-    width: 100%;
     padding: 1.188rem 1rem;
+    width: 100%;
 `
 
 const AdicionaButton = styled.p` 
@@ -39,6 +39,7 @@ const AdicionaButton = styled.p`
 
 const QuantidadeCard = (props) => {
     let options = []
+    //criar as options do select de 0 a 10
     for (let index = 0; index < 11; index++) {
         options.push(
             <option value={index} key={index}>{index}</option>

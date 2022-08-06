@@ -1,12 +1,13 @@
 import styled, { createGlobalStyle } from "styled-components"
+import { gray } from "../../constants/colors"
 
 export const GlobalStyle = createGlobalStyle`
     *{
         box-sizing: border-box;
-        padding: 0;
-        margin: 0;
         font-family: 'Roboto', sans-serif;
         letter-spacing: -0.39px;
+        margin: 0;
+        padding: 0;
     }
     ul {
         list-style-type: none;
@@ -17,12 +18,12 @@ export const Header = styled.header`
     align-items: center ;
     box-shadow: 0 0.5px 0 0 rgba(0, 0, 0, 0.25);
     display: grid;
+    font-size: 1rem;
     grid-template-columns: 1fr 1fr 1fr;
     height: 2.75rem;
     justify-items: center;
     padding: 0 1rem;
     width: 100%;
-    font-size: 1rem;
 `
 
 export const HeaderIcon = styled.img` 
@@ -37,9 +38,9 @@ export const MainContainer = styled.main`
 `
 
 export const SearchContainer = styled.div` 
-    border: 1px solid #b8b8b8;
-    display: flex;
     align-items: center;
+    border: 1px solid ${gray};
+    display: flex;
     padding: 1rem;
     width: 100%;
 `

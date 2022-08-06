@@ -3,7 +3,6 @@ import { BASE_URL } from "../constants/urls"
 
 export const GetRestaurants = (setRestaurants) => {
     const token = JSON.parse(localStorage.getItem('token'))
-    console.log(token)
     axios.get(`${BASE_URL}/restaurants`, {
         headers: {
             auth: token
@@ -23,7 +22,6 @@ export const GetRestaurantDetail = (id, setRestaurant) => {
         }
     })
     .then(res => {
-        console.log(res.data.restaurant)
         setRestaurant(res.data.restaurant)
     })
     .catch(err => {

@@ -7,6 +7,7 @@ const CardProdutoMenu = (props) => {
     const [numeroNoCart ,setNumeroNoCart] = useState(0)
 
     useEffect(() => {
+        // Cada card tem um estado para definir o número de produtos no carrinho, caso haja
         cart.forEach(produto => {
             if(produto.id === props.id) {
                 setNumeroNoCart(produto.quantity)
@@ -14,15 +15,14 @@ const CardProdutoMenu = (props) => {
         })
     }, [cart])
 
+    //recebe o id do card clicado e itera pelos produtos do carrinho até achar o mesmo id e remover o produto
     const handleRemoverDoCarrinho = (event) => {
         const idElemento = event.target.id
         cart.forEach((produto, index) => {
             if(idElemento === produto.id) {
-                console.log('chegou aqui')
                 setCart(prevCart => {
                     let newArray = prevCart
                     newArray.splice(index,1)
-                    console.log(newArray)
                     return newArray
                 })
             }
