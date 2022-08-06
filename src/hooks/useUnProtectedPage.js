@@ -6,7 +6,7 @@ import { goToFeed } from "../router/coordinator"
 const useUnprotectedPage = () => {
     const navigate = useNavigate()
     useEffect(() => {
-        const token = localStorage.getItem('token')
+        const token = JSON.parse(window.localStorage.getItem('token'))
         if(token) {
             goToFeed(navigate)
         }
