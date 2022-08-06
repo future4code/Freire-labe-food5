@@ -4,6 +4,7 @@ import ScrollContainer from "react-indiana-drag-scroll"
 import SearchIcon from '../../assets/img/search_icon.svg'
 import CardRestaurant from '../../components/CardRestaurantFeed/CardRestaurant'
 import { Footer } from '../../components/Footer/Footer'
+import ActiveOrder from '../../components/ActiveOrder/ActiveOrder'
 import { goToRestaurantMenu, goToSearch } from '../../router/coordinator'
 import { GetRestaurants, restaurantsCategories } from '../../services/restaurants'
 import { GlobalStyle, MainContainer, SearchContainer, InputStyled, CategoriasContainer, CategoriaLi, Header } from './styled'
@@ -77,8 +78,9 @@ const FeedPage = () => {
                 <div>
                     {listaRestaurantesRender}
                 </div>
-                <Footer/>
+               
             </MainContainer>
+            <ActiveOrder/>
             <Footer />
         </div>
     )
