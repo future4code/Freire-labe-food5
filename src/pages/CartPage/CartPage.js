@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import {Footer} from '../../components/Footer/Footer'
 import { useRequestData } from '../../services/requisicoes'
 import { BASE_URL } from '../../constants/urls'
+
 // import {Container, Header, Conteudo, DivAddress, DivTotal, DivFrete, PEndereco, PEndereco1, Hr, Button, PCart, PTotal, Pag, Div, Div1}
 export const Container = styled.div`
     display: grid;
