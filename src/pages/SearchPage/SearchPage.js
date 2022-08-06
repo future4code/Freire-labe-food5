@@ -1,10 +1,11 @@
+//Bibliotecas
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-
+//Arquivos locais
 import SearchIcon from '../../assets/img/search_icon.svg'
 import BackPageIcon from '../../assets/img/back-page_icon.svg'
 import CardRestaurant from '../../components/CardRestaurantFeed/CardRestaurant'
-import { goBackPage } from '../../router/coordinator'
+import { goBackPage, goToRestaurantMenu } from '../../router/coordinator'
 import { GetRestaurants } from '../../services/restaurants'
 import { GlobalStyle, MainContainer, SearchContainer, InputStyled, Header, HeaderIcon, ListaResposta } from './styled'
 
@@ -13,27 +14,35 @@ const SearchPage = () => {
     const [listaRestaurantes, setListaRestaurantes] = useState([])
     const [ valorInputBusca, setValorInputBusca] = useState('')
 
+    //contralador de input
     const handleInputBusca = (event) => {
         setValorInputBusca(event.target.value)
     }
 
     useEffect(() => {
+        //dar foco ao input assim que a página carregar
         document.getElementById('inputBusca').focus()
+        //recebe a lista de restaurantes
         GetRestaurants(setListaRestaurantes)
     }, [])
 
+
+    //filtra a lista de restaurante por nome ou categoria
     let listaFiltradaPorNome = listaRestaurantes.filter(restaurante => {
         return ((restaurante.name.toUpperCase().includes(valorInputBusca.toUpperCase())) || (restaurante.category.toUpperCase().includes(valorInputBusca.toUpperCase())))
     })
 
+
+    //Criar o JSX para a lista de restaurantes
     let listaRestaurantesRender
     if(valorInputBusca === '') {
+        // se o input estiver vazio mostra uma mensagem
         listaRestaurantesRender = (
             <ListaResposta>Busque por nome de restaurantes</ListaResposta>
         )
     } else {
         if(listaFiltradaPorNome.length > 0) {
-            console.log(listaFiltradaPorNome)
+            //mostra a lista de restaurantes filtrada
             listaRestaurantesRender = listaFiltradaPorNome.map(restaurante => {
                 return (
                     <CardRestaurant 
@@ -42,11 +51,12 @@ const SearchPage = () => {
                         name={restaurante.name}
                         deliveryTime={restaurante.deliveryTime}
                         shipping={restaurante.shipping}
-                        // onClick={() => linkParaPáginaDeDetalhes(navigate, restaurante.id)}
+                        onClick={() => goToRestaurantMenu(navigate, restaurante.id)}
                     />
                 )
             })
         } else {
+            // mostra uma mensagem para resultados não encontrados
             listaRestaurantesRender = <ListaResposta>Nenhum resultado encontrado.</ListaResposta>
         }
     }

@@ -1,6 +1,8 @@
+//Bibliotecas
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import ScrollContainer from "react-indiana-drag-scroll"
+//Arquivos locais
 import SearchIcon from '../../assets/img/search_icon.svg'
 import CardRestaurant from '../../components/CardRestaurantFeed/CardRestaurant'
 import { Footer } from '../../components/Footer/Footer'
@@ -14,13 +16,16 @@ const FeedPage = () => {
     const [categoria, setCategoria] = useState('')
 
     useEffect(() => {
+        // recebe a lista de restaurantes na primeira inicialização
         GetRestaurants(setListaRestaurantes)
     }, [])
 
+    //altera o estado com a categoria selecionada
     const handleCategoria = (event) => {
         setCategoria(event.target.id)
     }
 
+    // faz um map na lista de categorias estática que foi importada e cria uma lista JSX com cada categoria
     let listaDeCategorias = restaurantsCategories.map((categoria, index) => {
         return (
             <CategoriaLi 
@@ -36,16 +41,18 @@ const FeedPage = () => {
     let listaFiltradaPorCategoria
     
     if(listaRestaurantes) {
-        console.log(listaRestaurantes)
+        // Se uma categoria diferente de 'todas' foi selecionada a lista é filtrada com os restaurantes que são parte desta categoria
         if(categoria && categoria !== 'Todas') {
             listaFiltradaPorCategoria = listaRestaurantes.filter(restaurante => {
                 return categoria === restaurante.category
             })
         } else {
+            // a lista de restaurantes continua a mesma
             listaFiltradaPorCategoria = listaRestaurantes
         }
     }
 
+    // mapeia a lista de restaurantes filtrada ou não e transforma em JSX
     let listaRestaurantesRender
     listaRestaurantesRender = listaFiltradaPorCategoria?.map(restaurante => {
         return (
@@ -70,6 +77,7 @@ const FeedPage = () => {
                     <InputStyled placeholder='Restaurante' />
                 </SearchContainer>
                 <ScrollContainer>
+                {/* Scroll da biblioteca react-indiana-drag que permite puxar os elementos com o toque */}
                     <CategoriasContainer>
                         {listaDeCategorias}
                     </CategoriasContainer>

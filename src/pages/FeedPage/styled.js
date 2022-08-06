@@ -1,12 +1,13 @@
 import styled, { createGlobalStyle } from "styled-components"
+import { gray, midGreen } from "../../constants/colors"
 
 export const GlobalStyle = createGlobalStyle`
     *{
         box-sizing: border-box;
-        padding: 0;
-        margin: 0;
         font-family: 'Roboto', sans-serif;
         letter-spacing: -0.39px;
+        margin: 0;
+        padding: 0;
     }
     ul {
         list-style-type: none;
@@ -19,8 +20,8 @@ export const Header = styled.header`
     display: flex;
     height: 2.75rem;
     justify-content: center;
-    width: 100%;
     font-size: 1rem;
+    width: 100%;
 `
 
 export const MainContainer = styled.main` 
@@ -29,9 +30,9 @@ export const MainContainer = styled.main`
 `
 
 export const SearchContainer = styled.div` 
-    border: 1px solid #b8b8b8;
-    display: flex;
     align-items: center;
+    border: 1px solid ${gray};
+    display: flex;
     padding: 1rem;
     width: 100%;
 `
@@ -56,13 +57,12 @@ export const CategoriasContainer = styled.ul`
 `
 
 export const CategoriaLi = styled.li`
-    /* min-width: 5.438rem; */
     margin: 0 0.25rem;
     padding: 0 1rem;
     font-size: 1rem;
     text-align: center;
     &:hover, &:active {
-        color: #5cb646;
+        color: ${midGreen};
         cursor: pointer;
     }
 `

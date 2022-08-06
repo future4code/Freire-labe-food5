@@ -1,10 +1,11 @@
 import styled from "styled-components"
+import { gray, midGreen } from "../../constants/colors"
 
 export const CardContainer = styled.div`
-    border: solid 1px #b8b8b8;
+    border: solid 1px ${gray};
     border-radius: 0.5rem;
-    min-height: 11.75rem;
     margin: 0.5rem 0;
+    min-height: 11.75rem;
     width: 100%;
     &:active, &:focus {
         box-shadow: 1px 1px rgba(0, 0, 0, 0.5);
@@ -23,14 +24,14 @@ export const DescricaoContainer = styled.div`
 `
 
 export const RestaurantName = styled.p` 
-    color: #5cb646;
+    color: ${midGreen};
     font-size: 1rem;
     margin-bottom: 0.25rem;
 `
 
 export const RestaurantNumbers = styled.div`
+    color: ${gray};
     display: flex;
     justify-content: space-between;
-    color: #b8b8b8;
 `
 

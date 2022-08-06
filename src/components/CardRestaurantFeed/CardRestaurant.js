@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { CardContainer, CardImagem, DescricaoContainer, RestaurantName, RestaurantNumbers } from './styled'
 
 const CardRestaurant = (props) => {
