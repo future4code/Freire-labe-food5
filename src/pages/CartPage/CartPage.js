@@ -1,4 +1,6 @@
-import React, {useState} from 'react'
+import React, {
+    // useState
+} from 'react'
 import styled from 'styled-components'
 import {Footer} from '../../components/Footer/Footer'
 import { useRequestData } from '../../services/requisicoes'
@@ -113,10 +115,15 @@ export const Div1 = styled.div`
 `
 
 const CartPage = () => {
-    const [profile, isloading, error, getData] = useRequestData(`${BASE_URL}/profile`)
-    const [arr, setArr] = useState([])
+    const [
+        profile, 
+        // isloading, 
+        // error, 
+        // getDate
+    ] = useRequestData(`${BASE_URL}/profile`)
+    // const [arr, setArr] = useState([])
 
-    const newArray = arr.map((array) => {return <div>{array}</div>})
+    // const newArray = arr.map((array) => {return <div>{array}</div>})
     return(
         <Container>
             <Header>
