@@ -41,7 +41,7 @@ export const updateProfile = (url, form) => {
 })
 }
 export const updateAdress = (url, form) => {
-    axios.get(url, form, {headers: {auth: token}})
+    axios.put(url, form, {headers: {auth: token}})
 .then((res) => {
     console.log(res.data)
 })
@@ -49,3 +49,4 @@ export const updateAdress = (url, form) => {
     console.log(err.message)
 })
 }
+

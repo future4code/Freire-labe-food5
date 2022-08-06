@@ -69,7 +69,7 @@ export const CardOrderHistory = (props) => {
         <Container>
             <PName>{restaurantName}</PName>
             <PDate>{data}</PDate>
-            <PTotal>SUBTOTAL R${totalPrice}</PTotal>
+            <PTotal>SUBTOTAL R${totalPrice.toFixed(2)}</PTotal>
         </Container>
     )
 }
