@@ -31,7 +31,7 @@ export const HeaderIcon = styled.img`
 `
 
 export const MainContainer = styled.main` 
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1rem 4rem;
     width: 100%;
 `
 
