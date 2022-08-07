@@ -26,6 +26,9 @@ const CardProdutoMenu = (props) => {
                     return newArray
                 })
             }
+            if(cart.length < 2) {
+                setCart([])
+            }
         })
         setNumeroNoCart(0)
     }
