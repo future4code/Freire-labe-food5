@@ -43,9 +43,13 @@ const RestaurantMenuPage = () => {
     const adicionarAoCarrinho = (event) => {
         //faz um map nos produtos do restaurante e verifica qual produto tem o id igual ao do produto selecionado
         restaurant.products.forEach(produto => {
+            if(cart.length < 1 && idProduto === produto.id){
+                setCart(prevCart => [...prevCart, restaurant])
+            }
             if(idProduto === produto.id) {
                 // cria um novo objeto com os dados do produto mais a quantidade que foi selecionada
                 let produtoComQuantidade = {...produto, quantity: quantidadeProduto}
+                
                 setCart(prevCart => [...prevCart, produtoComQuantidade])
             }
         })

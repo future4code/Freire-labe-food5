@@ -50,14 +50,14 @@ const ActiveOrder = () => {
     console.log(person.order)
     return(
         <>
-        {person.order === null ? <div></div> : <Container>
+        {person.order !== null ? <Container>
         <Img src={clock} alt="" />
         <Div1>
         <P1>Pedido em andamento</P1>
        <P2>{person?.order?.restaurantName}</P2> 
        <P3> SUBTOTAL R${person?.order?.totalPrice.toFixed(2)}</P3> 
         </Div1>
-    </Container>}
+    </Container> : <div>a</div> }
         </>
         
     )

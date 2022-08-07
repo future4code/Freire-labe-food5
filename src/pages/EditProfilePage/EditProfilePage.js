@@ -14,7 +14,7 @@ import { BASE_URL } from "../../constants/urls";
 import { useNavigate } from "react-router-dom";
 import { goToProfilePage } from "../../router/coordinator";
 import backPageIcon from "../../assets/img/back-page_icon.svg";
-import { FormContainer, StyledInput } from "../../global/globalStyles";
+import { StyledInput } from "../../global/globalStyles";
 
 const EditProfilePage = (props) => {
   const [form, onChange, cleanFields] = useForm({
@@ -42,7 +42,7 @@ const EditProfilePage = (props) => {
           name="name"
           id="name"
           label="Nome"
-          type="name"
+          type="text"
           variant="outlined"
           margin="normal"
           fullWidth
@@ -66,7 +66,7 @@ const EditProfilePage = (props) => {
           name="cpf"
           id="cpf"
           label="CPF"
-          type="cpf"
+          type="text"
           variant="outlined"
           margin="normal"
           fullWidth
