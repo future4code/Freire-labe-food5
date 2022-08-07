@@ -13,7 +13,7 @@ import EditAddressPage from '../pages/EditAddressPage/EditAddressPage';
 import EditProfilePage from '../pages/EditProfilePage/EditProfilePage';
 import AddressPage from '../pages/AddressPage';
 import RestaurantMenuPage from '../pages/RestaurantMenuPage/RestaurantMenuPage';
-import SignupPage from '../pages/SignUpPage';
+import SignupPage from '../pages/SignupPage';
 import CartPage from '../pages/CartPage/CartPage'
 import ErrorPage from '../pages/ErrorPage';
 

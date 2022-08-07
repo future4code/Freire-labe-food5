@@ -5,11 +5,13 @@ import { useNavigate } from 'react-router-dom'
 import SearchIcon from '../../assets/img/search_icon.svg'
 import BackPageIcon from '../../assets/img/back-page_icon.svg'
 import CardRestaurant from '../../components/CardRestaurantFeed/CardRestaurant'
+import useProtectedPage from '../../hooks/useProtectedPage'
 import { goBackPage, goToRestaurantMenu } from '../../router/coordinator'
 import { GetRestaurants } from '../../services/restaurants'
 import { GlobalStyle, MainContainer, SearchContainer, InputStyled, Header, HeaderIcon, ListaResposta } from './styled'
 
 const SearchPage = () => {
+    useProtectedPage()
     const navigate = useNavigate()
     const [listaRestaurantes, setListaRestaurantes] = useState([])
     const [ valorInputBusca, setValorInputBusca] = useState('')

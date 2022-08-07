@@ -5,13 +5,15 @@ import ScrollContainer from "react-indiana-drag-scroll"
 //Arquivos locais
 import SearchIcon from '../../assets/img/search_icon.svg'
 import CardRestaurant from '../../components/CardRestaurantFeed/CardRestaurant'
-import { Footer } from '../../components/Footer/Footer'
 import ActiveOrder from '../../components/ActiveOrder/ActiveOrder'
+import useProtectedPage from '../../hooks/useProtectedPage'
+import { Footer } from '../../components/Footer/Footer'
 import { goToRestaurantMenu, goToSearch } from '../../router/coordinator'
 import { GetRestaurants, restaurantsCategories } from '../../services/restaurants'
 import { GlobalStyle, MainContainer, SearchContainer, InputStyled, CategoriasContainer, CategoriaLi, Header } from './styled'
 
 const FeedPage = () => {
+    useProtectedPage()
     const navigate = useNavigate()
     const [listaRestaurantes, setListaRestaurantes] = useState([])
     const [categoria, setCategoria] = useState('')

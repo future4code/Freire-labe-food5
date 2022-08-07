@@ -5,12 +5,14 @@ import { useNavigate, useParams } from 'react-router-dom'
 import BackPageIcon from '../../assets/img/back-page_icon.svg'
 import CardProdutoMenu from '../../components/CardProdutoMenu/CardProdutoMenu'
 import QuantidadeCard from '../../components/QuantidadeCard/QuantidadeCard'
+import useProtectedPage from '../../hooks/useProtectedPage'
 import { goBackPage } from '../../router/coordinator'
 import { GetRestaurantDetail } from '../../services/restaurants'
 import { GlobalContext } from '../../context/GlobalContext'
 import { GlobalStyle, MainContainer, Header, HeaderIcon, RestaurantDetailsContainer, RestaurantLogo, RestaurantName, CategoriaTitle, CategoriaLine} from './styled'
 
 const RestaurantMenuPage = () => {
+    useProtectedPage()
     const navigate = useNavigate()
     const { id } = useParams()
     const { cart, setCart } = useContext(GlobalContext)
