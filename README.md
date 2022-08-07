@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+<img src="https://user-images.githubusercontent.com/95589176/183309320-49c364f9-ed60-4b95-81e2-87e12d11ddb2.png" alt="Future Eats" style="height: 200px; width:100%;"/>
+<hr />
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p>Projeto desenvolvido para mobile, com o objetivo de nos aproximar do mundo real e nos permitir implementar as funcionalidades mais comuns em aplicações de Frontend  aprendidadas nos últimos três meses no Bootcamp da Labenu, como: formulários, autenticação, routers e estilizações.</p>
 
-## Available Scripts
+### `Funcionalides do site`
 
-In the project directory, you can run:
+#### Login/Cadastro
+- ✅ O usuário é capaz de criar uma conta, cadastrando seus dados pessoais e seu endereço
+- ✅ Caso insira alguma informação incorreta ou deixe de inserir, o usuário recebe mensagens de erro
+- ✅ Após finalizar o cadastro, o usuário é redirecionado para o feed
 
-### `npm start`
+#### Feed
+- ✅ O usuário é capaz de visualizar uma lista com todos os restaurantes por nome ou categoria
+- ✅ O usuário é capaz de filtrar a lista de restaurantes por categoria
+- ✅ Ao clicar em um card de restaurante, o usuário é pode visualizar o cardápio do restaurante
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### Cardápio do Restaurante
+- ✅ O usuário é capaz de visualizar as informações do restaurante e uma lista de pratos dividida por categoria
+- ✅ O usuário é capaz de adicionar pratos ao carrinho e selecionar a quantidade de cada prato
+- ✅ O usuário pode remover itens do carrinho
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Carrinho 
+- ✅ O usuário é capaz de vizualizar uma lista de itens que adicionou ao carrinho.
+- ✅ Caso não tenha adicionado nenhum item, verá uma mensagem indicando que o carrinho está vazio
+- ✅ O usuário pode vizualizar o endereço da entrega no topo da tela
+- ✅ O preço total da compra
+- ✅ O usuário é capaz de selecionar  uma forma de pagamento dentre as opções de cartão e dinheiro
+- ✅ O usuário é capaz de concluir um pedido e, ao fazê-lo, aparecerá um banner de "Pedido em Andamento" com os dados do pedido (esse banner fica ativo durante X minutos, sendo X o tempo de entrega do restaurante) 
 
-### `npm test`
+#### Perfil
+- ✅ O usuário é capaz de visualizar seus dados pessoais e endereço
+- ✅ O usuário é capaz de editar seus dados pessoais e endereço
+- ✅ Ao editar as informações, caso insira alguma informação incorreta ou deixe de inserir alguma informação obrigatória, o usuário recebe uma mensagem de erro
+- ✅ O usuário é capaz de vizualizar o seu histórico de pedidos concluídos
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `Tecnologias utilizadas`
 
-### `npm run build`
+* React
+* React Router
+* React Indiana Drag Scroll
+* Hooks useState, useEffect e useProtectedPage
+* Bibliotecas Json
+* Material UI
+* Context API
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `Desenvolvedores do projeto`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- João Gabriel Guimarães
+  - GitHub: https://github.com/joaoguimaraess
+  - Linkedin: https://www.linkedin.com/in/joao-gabriel-guimaraes-7aa246191
+- Marcia Mello
+  - GitHub: https://github.com/marciadpmell
+  - Linkedin: https://www.linkedin.com/in/m%C3%A1rcia-de-paula-mello-6347a61bb
+- Rafael Correia
+  - GitHub: https://github.com/rafaelccorreia
+  - Linkedin: https://www.linkedin.com/in/rafaelccorreia
+  
+### `LINK SURGE`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+https://future-eats-marajo.surge.sh/
 
-### `npm run eject`
+### `Imagens`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![image](https://user-images.githubusercontent.com/95589176/183311792-df69a021-5705-49d5-8456-affa1f1de47f.png)
+![image](https://user-images.githubusercontent.com/95589176/183311799-176e66d4-73db-4512-abfc-216e1b8ba9ff.png)
+![image](https://user-images.githubusercontent.com/95589176/183311817-45ae0beb-9de6-4981-8c99-80a4912291df.png)
+![image](https://user-images.githubusercontent.com/95589176/183311892-241ecedb-ef54-4ae9-ac55-72ab6de306a3.png)
+![image](https://user-images.githubusercontent.com/95589176/183311910-a5ea832d-d5ed-47f4-a692-ef278885f5db.png)
+![image](https://user-images.githubusercontent.com/95589176/183311931-162d68b0-3f2d-4176-8624-1a0112ceffd7.png)
+![image](https://user-images.githubusercontent.com/95589176/183311987-5b7b84ed-2e6f-409a-974a-7dc2f414d9fb.png)
+![image](https://user-images.githubusercontent.com/95589176/183311961-3e8c617d-e27d-4d15-bf63-dcb026a5c557.png)
+![image](https://user-images.githubusercontent.com/95589176/183312024-737f71a7-9ee8-4de1-901f-88d6903e7d10.png)
+![image](https://user-images.githubusercontent.com/95589176/183312029-d41bd1e7-0f36-433a-82b8-6ab45eeb3e70.png)
+![image](https://user-images.githubusercontent.com/95589176/183312036-fdc9613a-44a5-4d91-a72f-2cc2960b31d4.png)
