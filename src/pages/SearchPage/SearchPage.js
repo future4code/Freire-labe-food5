@@ -10,6 +10,7 @@ import { GetRestaurants } from '../../services/restaurants'
 import { GlobalStyle, MainContainer, SearchContainer, InputStyled, Header, HeaderIcon, ListaResposta } from './styled'
 
 const SearchPage = () => {
+    useProtectedPage()
     const navigate = useNavigate()
     const [listaRestaurantes, setListaRestaurantes] = useState([])
     const [ valorInputBusca, setValorInputBusca] = useState('')

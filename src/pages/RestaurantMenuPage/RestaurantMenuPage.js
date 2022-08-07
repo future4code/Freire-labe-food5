@@ -12,6 +12,7 @@ import { GlobalStyle, MainContainer, Header, HeaderIcon, RestaurantDetailsContai
 import { Footer } from '../../components/Footer/Footer'
 
 const RestaurantMenuPage = () => {
+    useProtectedPage()
     const navigate = useNavigate()
     const { id } = useParams()
     const { cart, setCart } = useContext(GlobalContext)
