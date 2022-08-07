@@ -12,7 +12,7 @@ import {
 } from "./styled";
 import { BASE_URL } from "../../constants/urls";
 import { useNavigate } from "react-router-dom";
-import { goToProfilePage } from "../../router/coordinator";
+import { goToProfilePage, useProtectedPage } from "../../router/coordinator";
 import backPageIcon from "../../assets/img/back-page_icon.svg";
 import {  StyledInput } from '../../global/globalStyles';
 
@@ -26,6 +26,8 @@ const EditAddressPage = (props) => {
     complement: "",
   });
   const navigate = useNavigate();
+
+  useProtectedPage(navigate)
   const saveUpdate = () => {
     const url = `${BASE_URL}/address`;
     updateProfile(url, form);

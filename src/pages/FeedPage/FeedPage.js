@@ -6,9 +6,8 @@ import ScrollContainer from "react-indiana-drag-scroll"
 import SearchIcon from '../../assets/img/search_icon.svg'
 import CardRestaurant from '../../components/CardRestaurantFeed/CardRestaurant'
 import ActiveOrder from '../../components/ActiveOrder/ActiveOrder'
-import useProtectedPage from '../../hooks/useProtectedPage'
 import { Footer } from '../../components/Footer/Footer'
-import { goToRestaurantMenu, goToSearch } from '../../router/coordinator'
+import { goToRestaurantMenu, goToSearch, useProtectedPage } from '../../router/coordinator'
 import { GetRestaurants, restaurantsCategories } from '../../services/restaurants'
 import { GlobalStyle, MainContainer, SearchContainer, InputStyled, CategoriasContainer, CategoriaLi, Header } from './styled'
 
@@ -22,6 +21,8 @@ const FeedPage = () => {
         // recebe a lista de restaurantes na primeira inicialização
         GetRestaurants(setListaRestaurantes)
     }, [])
+
+    useProtectedPage(navigate)
 
     //altera o estado com a categoria selecionada
     const handleCategoria = (event) => {

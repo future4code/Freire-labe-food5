@@ -2,7 +2,7 @@ import React from "react";
 import { useRequestData } from "../../services/requisicoes";
 import { CardOrderHistory } from "../../components/CardOrderHistory/CardOrderHistory";
 import {useNavigate} from 'react-router-dom'
-import { goToEditAddressPage, goToEditProfilePage } from "../../router/coordinator";
+import { goToEditAddressPage, goToEditProfilePage, useProtectedPage } from "../../router/coordinator";
 import edit from '../../assets/img/edit.svg'
 import {Container,
     Header,
@@ -38,6 +38,8 @@ import { Footer } from "../../components/Footer/Footer";
     })
    
     const navigate = useNavigate()
+
+    useProtectedPage(navigate)
     return(
         <Container>
             <GlobalStyle />
