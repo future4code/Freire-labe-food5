@@ -1,7 +1,7 @@
 <img src="https://user-images.githubusercontent.com/95589176/183309320-49c364f9-ed60-4b95-81e2-87e12d11ddb2.png" alt="Future Eats" style="height: 200px; width:100%;"/>
 <hr />
 
-<p>Projeto desenvolvido para mobile, com o objetivo de nos aproximar do mundo real e nos permitir implementar as funcionalidades mais comuns em aplicações de Frontend  aprendidadas nos últimos três meses no Bootcamp da Labenu, como: formulários, autenticação, routers e estilizações.</p>
+<p>Projeto desenvolvido para mobile, com o objetivo de nos aproximar do mundo real e nos permitir implementar as funcionalidades mais comuns em aplicações de Frontend  aprendidas nos últimos três meses no Bootcamp da Labenu, como: formulários, autenticação, routers e estilizações.</p>
 
 ### `Funcionalides do site`
 
@@ -13,7 +13,7 @@
 #### Feed
 - ✅ O usuário é capaz de visualizar uma lista com todos os restaurantes por nome ou categoria
 - ✅ O usuário é capaz de filtrar a lista de restaurantes por categoria
-- ✅ Ao clicar em um card de restaurante, o usuário é pode visualizar o cardápio do restaurante
+- ✅ Ao clicar em um card de restaurante, o usuário pode visualizar o cardápio do restaurante
 
 #### Cardápio do Restaurante
 - ✅ O usuário é capaz de visualizar as informações do restaurante e uma lista de pratos dividida por categoria
