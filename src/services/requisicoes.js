@@ -32,12 +32,13 @@ export const useRequestData = (url) => {
   };
   
 export const updateProfile = (url, form) => {
+    const token = JSON.parse(window.localStorage.getItem('token'))
     axios.put(url, form, {headers: {auth: token}})
 .then((res) => {
     console.log(res.data)
 })
 .catch((err) => {
-    console.log(err.message)
+    console.log(err)
 })
 }
 export const updateAdress = (url, form) => {
@@ -49,4 +50,20 @@ export const updateAdress = (url, form) => {
     console.log(err.message)
 })
 }
+
+export const placeOrder = (url, items, payment) => {
+    const token = JSON.parse(window.localStorage.getItem('token'))
+    const body = {
+        products: items ,
+        paymentMethod: payment
+    }
+    axios.post(url, body, {headers: {auth: token}})
+.then((res) => {
+    console.log(res.data)
+})
+.catch((err) => {
+    console.log(err)
+})
+}
+
 
